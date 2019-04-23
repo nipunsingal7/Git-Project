@@ -160,4 +160,22 @@ getch();
 h.main_menu();
 return 0;
 }
+//FUNCTION FOR DISPLAYING A PURTICULAR CUSTOMER`S RECORD
 
+
+void hotel::display()
+{
+
+  system("cls");
+
+ifstream fin("Record.dat",ios::in);
+int r,flag;
+
+cout<<"\n Enter room no. for a particular customer`s details :- "<<endl;
+cin>>r;
+
+while(!fin.eof())
+{
+
+fin.read((char*)this,sizeof(hotel));
+if(room_no==r)
