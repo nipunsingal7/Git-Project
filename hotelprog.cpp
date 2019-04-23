@@ -298,3 +298,50 @@ fin.close();
 return(flag);
 
 }
+
+//FUNCTION TO MODIFY CUSTOMERS RECORD
+
+
+void hotel::modify(int r)
+{
+
+long pos,flag=0;
+
+fstream file("Record.dat",ios::in|ios::out|ios::binary);
+
+while(!file.eof())
+{
+
+pos=file.tellg();
+file.read((char*)this,sizeof(hotel));
+
+if(room_no==r)
+{
+
+cout<<"\n Enter New Details";
+cout<<"\n -----------------";
+cout<<"\n Name: ";
+cin>>name;
+cout<<" Address: ";
+cin>>address;
+cout<<" Phone no: ";
+cin>>phone;
+file.seekg(pos);
+file.write((char*)this,sizeof(hotel));
+cout<<"\n Record is modified....!!";
+flag=1;
+break;
+
+}
+
+}
+
+if(flag==0)
+cout<<"\n Sorry Room no. not found or vacant...!!";
+file.close();
+
+}
+
+
+//END OF MODIFY FUNCTION
+
