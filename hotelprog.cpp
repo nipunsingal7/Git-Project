@@ -141,25 +141,7 @@ fout.close();
 
 //END OF BOOKING FUNCTION
 
-int main()
-{
 
-hotel h;
-
-  system("cls");
-
-cout<<"\n\t\t\t****************************";
-cout<<"\n\t\t\t* HOTEL MANAGEMENT PROJECT *";
-cout<<"\n\t\t\t****************************";
-cout<<"\n\n\t\tDeveloped By:";
-cout<<"\t Nipun Singal";
-cout<<"\n\n\n\n\n\n\n\t\t\t\t\tPress any key to continue....!!";
-
-getch();
-
-h.main_menu();
-return 0;
-}
 //FUNCTION FOR DISPLAYING A PURTICULAR CUSTOMER`S RECORD
 
 
