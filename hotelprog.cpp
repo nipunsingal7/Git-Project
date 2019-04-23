@@ -247,3 +247,25 @@ cout<<"\n\n 1.Modify Customer Record";
 cout<<"\n 2.Delete Customer Record";
 cout<<"\n 3. Bill Of Customer";
 cout<<"\n Enter your choice: ";
+
+cin>>choice;
+  system("cls");
+
+cout<<"\n Enter room no: " ;
+cin>>r;
+
+switch(choice)
+{
+
+case 1:	modify(r);
+break;
+
+case 2:	delete_rec(r);
+break;
+
+case 3: bill(r);
+break;
+
+default: cout<<"\n Wrong Choice.....!!";
+
+}
