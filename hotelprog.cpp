@@ -192,3 +192,15 @@ flag=1;
 break;
 
 }
+}
+
+if(flag==0)
+cout<<"\n Sorry Room no. not found or vacant....!!";
+cout<<"\n\n Press any key to continue....!!";
+
+getch();
+fin.close();
+}
+
+
+//END OF DISPLAY FUNCTION
