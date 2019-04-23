@@ -397,4 +397,27 @@ rename("temp.dat","Record.dat");
 
 
 //END OF DELETE FUNCTION
+//FUNCTION FOR CUSTOMER`S BILL
+
+void hotel::bill(int r)
+{
+
+hotel h1;
+ifstream f1;
+ f1.open("record.dat",ios::in|ios::binary);
+
+if(!f1)
+ cout<<"cannot open";
+
+ else
+ {
+
+  f1.read((char*)&h1,sizeof (hotel));
+  while(f1)
+
+  {
+
+  f1.read((char*)&h1,sizeof(hotel));
+
+  }
 
