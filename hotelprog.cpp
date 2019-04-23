@@ -204,3 +204,17 @@ fin.close();
 
 
 //END OF DISPLAY FUNCTION
+
+
+//FUNCTION TO DISPLAY ALL ROOMS OCCUPIED
+
+
+void hotel::rooms()
+{
+
+  system("cls");
+
+ifstream fin("Record.dat",ios::in);
+cout<<"\n\t\t\t    List Of Rooms Allotted";
+cout<<"\n\t\t\t    ----------------------";
+cout<<"\n\n Room No.\tName\t\tAddress\t\t\t\tPhone No.\n";
