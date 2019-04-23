@@ -292,3 +292,9 @@ flag=1;
 break;
 
 }
+}
+
+fin.close();
+return(flag);
+
+}
