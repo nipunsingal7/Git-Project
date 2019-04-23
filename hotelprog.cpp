@@ -368,4 +368,33 @@ cout<<"\n Address: "<<address;
 cout<<"\n Pone No: "<<phone;
 cout<<"\n\n Do you want to delete this record(y/n): ";
 cin>>ch;
+if(ch=='n')
+fout.write((char*)this,sizeof(hotel));
+flag=1;
+
+}
+
+else
+fout.write((char*)this,sizeof(hotel));
+
+}
+
+fin.close();
+fout.close();
+
+if(flag==0)
+cout<<"\n Sorry room no. not found or vacant...!!";
+
+else
+{
+
+remove("Record.dat");
+rename("temp.dat","Record.dat");
+
+}
+
+}
+
+
+//END OF DELETE FUNCTION
 
