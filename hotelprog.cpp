@@ -344,4 +344,28 @@ file.close();
 
 
 //END OF MODIFY FUNCTION
+//FUNCTION FOR DELETING RECORD
+
+
+void hotel::delete_rec(int r)
+{
+
+int flag=0;
+char ch;
+ifstream fin("Record.dat",ios::in);
+ofstream fout("temp.dat",ios::out);
+
+while(!fin.eof())
+{
+
+fin.read((char*)this,sizeof(hotel));
+if(room_no==r)
+
+{
+
+cout<<"\n Name: "<<name;
+cout<<"\n Address: "<<address;
+cout<<"\n Pone No: "<<phone;
+cout<<"\n\n Do you want to delete this record(y/n): ";
+cin>>ch;
 
