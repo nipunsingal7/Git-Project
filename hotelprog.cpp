@@ -232,4 +232,18 @@ getch();
 fin.close();
 
 }
+//FUNCTION FOR EDITING RECORDS AND FOR BILL
 
+
+void hotel::edit()
+{
+
+  system("cls");
+
+int choice,r;
+cout<<"\n EDIT MENU";
+cout<<"\n ---------";
+cout<<"\n\n 1.Modify Customer Record";
+cout<<"\n 2.Delete Customer Record";
+cout<<"\n 3. Bill Of Customer";
+cout<<"\n Enter your choice: ";
