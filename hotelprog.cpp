@@ -298,3 +298,150 @@ fin.close();
 return(flag);
 
 }
+
+//FUNCTION TO MODIFY CUSTOMERS RECORD
+
+
+void hotel::modify(int r)
+{
+
+long pos,flag=0;
+
+fstream file("Record.dat",ios::in|ios::out|ios::binary);
+
+while(!file.eof())
+{
+
+pos=file.tellg();
+file.read((char*)this,sizeof(hotel));
+
+if(room_no==r)
+{
+
+cout<<"\n Enter New Details";
+cout<<"\n -----------------";
+cout<<"\n Name: ";
+cin>>name;
+cout<<" Address: ";
+cin>>address;
+cout<<" Phone no: ";
+cin>>phone;
+file.seekg(pos);
+file.write((char*)this,sizeof(hotel));
+cout<<"\n Record is modified....!!";
+flag=1;
+break;
+
+}
+
+}
+
+if(flag==0)
+cout<<"\n Sorry Room no. not found or vacant...!!";
+file.close();
+
+}
+
+
+//END OF MODIFY FUNCTION
+//FUNCTION FOR DELETING RECORD
+
+
+void hotel::delete_rec(int r)
+{
+
+int flag=0;
+char ch;
+ifstream fin("Record.dat",ios::in);
+ofstream fout("temp.dat",ios::out);
+
+while(!fin.eof())
+{
+
+fin.read((char*)this,sizeof(hotel));
+if(room_no==r)
+
+{
+
+cout<<"\n Name: "<<name;
+cout<<"\n Address: "<<address;
+cout<<"\n Pone No: "<<phone;
+cout<<"\n\n Do you want to delete this record(y/n): ";
+cin>>ch;
+if(ch=='n')
+fout.write((char*)this,sizeof(hotel));
+flag=1;
+
+}
+
+else
+fout.write((char*)this,sizeof(hotel));
+
+}
+
+fin.close();
+fout.close();
+
+if(flag==0)
+cout<<"\n Sorry room no. not found or vacant...!!";
+
+else
+{
+
+remove("Record.dat");
+rename("temp.dat","Record.dat");
+
+}
+
+}
+
+
+//END OF DELETE FUNCTION
+//FUNCTION FOR CUSTOMER`S BILL
+
+void hotel::bill(int r)
+{
+
+hotel h1;
+ifstream f1;
+ f1.open("record.dat",ios::in|ios::binary);
+
+if(!f1)
+ cout<<"cannot open";
+
+ else
+ {
+
+  f1.read((char*)&h1,sizeof (hotel));
+  while(f1)
+
+  {
+
+  f1.read((char*)&h1,sizeof(hotel));
+
+  }
+ if (h1.room_no == r)
+  {
+
+  if(h1.room_no>=1&&h1.room_no<=30)
+  cout<<"your bill = 2000";
+
+  else if (h1.room_no>=35&&h1.room_no<=45)
+  cout<<"your bill = 5000" ;
+
+  else
+  cout<<"your bill = 7000";
+
+  }
+
+  else
+  { cout<<"room no. not found";}
+
+  }
+
+  f1.close();
+  getch();
+
+}
+
+//END OF BILLING FUNCTION
