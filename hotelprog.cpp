@@ -420,4 +420,28 @@ if(!f1)
   f1.read((char*)&h1,sizeof(hotel));
 
   }
+ if (h1.room_no == r)
+  {
 
+  if(h1.room_no>=1&&h1.room_no<=30)
+  cout<<"your bill = 2000";
+
+  else if (h1.room_no>=35&&h1.room_no<=45)
+  cout<<"your bill = 5000" ;
+
+  else
+  cout<<"your bill = 7000";
+
+  }
+
+  else
+  { cout<<"room no. not found";}
+
+  }
+
+  f1.close();
+  getch();
+
+}
+
+//END OF BILLING FUNCTION
