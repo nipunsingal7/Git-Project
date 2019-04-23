@@ -232,4 +232,69 @@ getch();
 fin.close();
 
 }
+//FUNCTION FOR EDITING RECORDS AND FOR BILL
 
+
+void hotel::edit()
+{
+
+  system("cls");
+
+int choice,r;
+cout<<"\n EDIT MENU";
+cout<<"\n ---------";
+cout<<"\n\n 1.Modify Customer Record";
+cout<<"\n 2.Delete Customer Record";
+cout<<"\n 3. Bill Of Customer";
+cout<<"\n Enter your choice: ";
+
+cin>>choice;
+  system("cls");
+
+cout<<"\n Enter room no: " ;
+cin>>r;
+
+switch(choice)
+{
+
+case 1:	modify(r);
+break;
+
+case 2:	delete_rec(r);
+break;
+
+case 3: bill(r);
+break;
+
+default: cout<<"\n Wrong Choice.....!!";
+
+}
+cout<<"\n Press any key to continue....!!!";
+
+getch();
+}
+
+int hotel::check(int r)
+{
+
+int flag=0;
+
+ifstream fin("Record.dat",ios::in);
+
+while(!fin.eof())
+{
+
+fin.read((char*)this,sizeof(hotel));
+if(room_no==r)
+{
+
+flag=1;
+break;
+
+}
+}
+
+fin.close();
+return(flag);
+
+}
